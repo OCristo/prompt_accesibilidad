@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Página Web con Errores de Accesibilidad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        #cabecera {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        #menu {
+            background-color: #444;
+            padding: 0.5rem;
+        }
+        
+        #menu div {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        #menu span {
+            margin: 0 1rem;
+        }
+        
+        #menu a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem;
+        }
+        
+        #contenido {
+            max-width: 1200px;
+            margin: 1rem auto;
+            padding: 1rem;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .seccion {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        
+        th, td {
+            padding: 0.5rem;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        form {
+            margin: 1rem 0;
+        }
+        
+        form div {
+            margin: 0.5rem 0;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+        }
+        
+        button {
+            padding: 0.5rem 1rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        #pie {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+        
+        .tarjeta {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        #formulario input[type="radio"], #formulario input[type="checkbox"] {
+            width: auto;
+        }
+        .imagen-card{
+            width: 200px;
+            height: 150px;
+        }
+        .imagen-Lanzamiento{
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="cabecera">
+        <div>Sitio Web de Demostración</div>
+        <p>Una página con diversos errores de accesibilidad</p>
+    </div>
+    
+    <div id="menu">
+        <div>
+            <span><a href="#inicio">Inicio</a></span>
+            <span><a href="#tablas">Tablas</a></span>
+            <span><a href="#formularios">Formularios</a></span>
+            <span><a href="#galeria">Galería</a></span>
+            <span><a href="#contacto">Contacto</a></span>
+        </div>
+    </div>
+    
+    <div id="contenido">
+        <div id="inicio" class="seccion">
+            <div>Bienvenido a Nuestra Página</div>
+            <p>Esta es una página de demostración con diferentes errores de accesibilidad.</p>
+            <p>Haz click en los links de navegación para explorar las diferentes secciones.</p>
+            
+            <div>Últimas Noticias</div>
+            <div class="tarjeta">
+                <div>Nuevo Lanzamiento</div>
+                <img class="imagen-Lanzamiento" src="https://i1.sndcdn.com/artworks-y1773BTqCnEgSVTc-PoANBg-t500x500.jpg" />
+                <p>Lanzamos una nueva versión de nuestro producto estrella.</p>
+                <a href="#">Click Aquí</a>
+            </div>
+        </div>
+        
+        <div id="tablas" class="seccion">
+            <div>Tablas de Datos</div>
+            <p>Ejemplo de una tabla con información estructurada:</p>
+            
+            <table>
+                <tr style="background-color: #f2f2f2;">
+                    <td>ID</td>
+                    <td>Nombre</td>
+                    <td>Categoría</td>
+                    <td>Precio</td>
+                    <td>Acciones</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Producto A</td>
+                    <td>Electrónica</td>
+                    <td>$199.99</td>
+                    <td><button onclick="editar()">Editar</button> <button style="background-color: #f44336;" onclick="eliminar()">Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Producto B</td>
+                    <td>Hogar</td>
+                    <td>$49.99</td>
+                    <td><button onclick="editar()">Editar</button> <button style="background-color: #f44336;" onclick="eliminar()">Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Producto C</td>
+                    <td>Ropa</td>
+                    <td>$29.99</td>
+                    <td><button onclick="editar()">Editar</button> <button style="background-color: #f44336;" onclick="eliminar()">Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td colspan="3">Total</td>
+                    <td>$279.97</td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        
+        <div id="formularios" class="seccion">
+            <div>Formularios</div>
+            <p>Ejemplo de un formulario de registro:</p>
+            
+            <form id="formulario">
+                <div>
+                    <div>Información Personal</div>
+                    
+                    <div>Nombre:</div>
+                    <input type="text" name="nombre" placeholder="Tu nombre completo">
+                    
+                    <div>Correo Electrónico:</div>
+                    <input type="text" name="email" placeholder="correo@ejemplo.com">
+                    
+                    <div>Contraseña:</div>
+                    <input type="password" name="password">
+                    
+                    <div>Fecha de Nacimiento:</div>
+                    <input type="text" name="fecha" placeholder="DD/MM/AAAA">
+                </div>
+                
+                <div>
+                    <div>Preferencias</div>
+                    
+                    <div>Intereses:</div>
+                    <div>
+                        <input type="checkbox" name="intereses" value="tecnologia">
+                        Tecnología
+                    </div>
+                    <div>
+                        <input type="checkbox" name="intereses" value="deportes">
+                        Deportes
+                    </div>
+                    <div>
+                        <input type="checkbox" name="intereses" value="cine">
+                        Cine
+                    </div>
+                    
+                    <div>País:</div>
+                    <select name="pais">
+                        <option value="">Selecciona</option>
+                        <option value="es">España</option>
+                        <option value="mx">México</option>
+                        <option value="ar">Argentina</option>
+                        <option value="co">Colombia</option>
+                        <option value="pe">Perú</option>
+                    </select>
+                    
+                    <div>Género:</div>
+                    <div>
+                        <input type="radio" name="genero" value="masculino">
+                        Masculino
+                    </div>
+                    <div>
+                        <input type="radio" name="genero" value="femenino">
+                        Femenino
+                    </div>
+                    <div>
+                        <input type="radio" name="genero" value="otro">
+                        Otro
+                    </div>
+                </div>
+                
+                <div>Mensaje:</div>
+                <textarea name="mensaje" rows="4" placeholder="Escribe tu mensaje aquí"></textarea>
+                
+                <div>
+                    <button onclick="enviar()">Enviar Formulario</button>
+                    <button style="background-color: #f44336;" onclick="limpiar()">Limpiar</button>
+                </div>
+            </form>
+        </div>
+        
+        <div id="galeria" class="seccion">
+            <div>Galería de Imágenes</div>
+            <p>Muestra de imágenes en formato de galería:</p>
+            
+            <div class="galeria">
+                <div class="tarjeta">
+                    <img class="imagen-card" src="https://www.rockzonemag.com/wp-content/uploads/2021/03/Jordi-Wild-vertical.gif" />
+                    <div>Imagen 1</div>
+                    <p>Descripción de la imagen 1</p>
+                </div>
+                <div class="tarjeta">
+                    <img class="imagen-card" src="https://cdn.podimo.com/images/302af751-2365-4a99-b5de-2e68eb96358a_450x450.png" />
+                    <div>Imagen 2</div>
+                    <p>Descripción de la imagen 2</p>
+                </div>
+                <div class="tarjeta">
+                    <img class="imagen-card" src="https://hips.hearstapps.com/hmg-prod/images/jordi-wild-memes-1642160029.jpg?crop=1xw:0.566909294512878xh;center,top&resize=1200:*" />
+                    <div>Imagen 3</div>
+                    <p>Descripción de la imagen 3</p>
+                </div>
+                <div class="tarjeta">
+                    <img class="imagen-card" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBQ53mOsdoFjEREQ5IJ9tWDN9b6wHjHDvtTg&s" />
+                    <div>Imagen 4</div>
+                    <p>Descripción de la imagen 4</p>
+                </div>
+                <div class="tarjeta">
+                    <img class="imagen-card" src="https://steamuserimages-a.akamaihd.net/ugc/5072773634789111081/39F5053C2550846919BF8609727545EA89721633/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" />
+                    <div>Imagen 5</div>
+                    <p>Descripción de la imagen 5</p>
+                </div>
+                <div class="tarjeta">
+                    <img class="imagen-card" src="https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da8476739bd41cda6f0288cf2f90" onclick="ampliar()"/>
+                    <div>Imagen 6</div>
+                    <p>Descripción de la imagen 6</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="contacto" class="seccion">
+            <div>Contacto</div>
+            <p>Puedes contactarnos de las siguientes maneras:</p>
+            
+            <div>
+                <div>Teléfono: <a href="#">+12 345 6789</a></div>
+                <div>Email: <a href="#">contacto@ejemplo.com</a></div>
+                <div>Dirección: Calle Ejemplo 123, Ciudad</div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <div id="pie">
+        <p>&copy; 2025 Sitio Web de Demostración. Todos los derechos reservados.</p>
+        <div>
+            <span><a href="#" onclick="terminos()">Términos de uso</a></span> |
+            <span><a href="#" onclick="privacidad()">Política de privacidad</a></span> |
+            <span><a href="#" onclick="cookies()">Cookies</a></span>
+        </div>
+    </div>
+    
+    <script>
+        function enviar() { alert('Formulario enviado'); return false; }
+        function limpiar() { alert('Formulario limpiado'); return false; }
+        function editar() { alert('Editar producto'); }
+        function eliminar() { alert('Eliminar producto'); }
+        function ampliar() { alert('Ampliar imagen'); }
+        function terminos() { alert('Términos de uso'); }
+        function privacidad() { alert('Política de privacidad'); }
+        function cookies() { alert('Política de cookies'); }
+    </script>
+</body>
+</html>
